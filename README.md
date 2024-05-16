@@ -1,4 +1,4 @@
-```markdown
+
 # Simple TCP Server
 
 [![Go Reference](https://pkg.go.dev/badge/golang.org/x/example.svg)](https://pkg.go.dev/golang.org/x/example)
@@ -47,4 +47,3 @@ nc localhost 4080
 
 Type a message and press Enter. The server will log your message and send a confirmation back.
 
-```
