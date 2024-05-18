@@ -25,12 +25,11 @@ func CreateServer(config *config.Config, logger *logrus.Logger) *Server {
 }
 
 func (s *Server) Start(ctx context.Context) error {
-
 	var err error
 
 	s.listener, err = net.Listen("tcp", s.cfg.Host+":"+s.cfg.Port)
 	if err != nil {
-		return fmt.Errorf("Error listening on port: %w", err)
+		return fmt.Errorf("error listening on port: %w", err)
 	}
 
 	defer s.listener.Close()

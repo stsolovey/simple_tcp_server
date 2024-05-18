@@ -24,6 +24,7 @@ func main() {
 	if err != nil {
 		log.WithError(err).Panic("Failed to load coniguration")
 	}
+
 	tcpServer := server.CreateServer(cfg, log)
 
 	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
