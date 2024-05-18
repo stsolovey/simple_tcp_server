@@ -23,7 +23,8 @@ This is a simple TCP server written in Go that listens on the host and port spec
 2. Install dependencies:
 
    ```bash
-   go mod tidy
+   make tools       # Install required tools like gofumpt, gci, and golangci-lint
+   go mod tidy      # Tidy up the dependencies
    ```
 
 ### Running the Server
@@ -51,6 +52,11 @@ Replace `[host]` and `[port]` with the values specified in your `.env` file. Typ
 ## Development Commands
 
 - **Start the server**: `make up`
+- **Install necessary tools**: `make tools`
 - **Format and tidy the code**: `make tidy`
 - **Lint the code**: `make lint`
 - **Run tests**: `make test`
+
+## Contribution
+
+Feel free to fork the repository, make improvements or customize as needed, and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
