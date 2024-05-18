@@ -1,5 +1,6 @@
 up:
-	go run main.go
+	-go run cmd/tcp_server/main.go
+
 
 tidy:
 	gofumpt -w .
