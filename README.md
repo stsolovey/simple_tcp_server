@@ -1,15 +1,15 @@
-
 # Simple TCP Server
 
 [![Go Reference](https://pkg.go.dev/badge/golang.org/x/example.svg)](https://pkg.go.dev/golang.org/x/example)
 
-This is a simple TCP server written in Go that listens on `localhost:4080`. It logs incoming messages and sends back a confirmation message.
+This is a simple TCP server written in Go that listens on the host and port specified in the `.env` file. It logs incoming messages and sends back a confirmation message.
 
 ## Getting Started
 
 ### Prerequisites
 
 - Go (https://golang.org/dl/)
+- A `.env` file in the root directory with `HOST` and `PORT` specified. See `.env.example` for format.
 
 ### Installing
 
@@ -23,7 +23,6 @@ This is a simple TCP server written in Go that listens on `localhost:4080`. It l
 2. Install dependencies:
 
    ```bash
-   go get ./...
    go mod tidy
    ```
 
@@ -35,15 +34,23 @@ You can run the server using the following Makefile command:
 make up
 ```
 
+This command will start the server as defined in `cmd/tcp_server/main.go`, loading configuration from the `.env` file.
+
 ## Usage
 
 To interact with the server, you can use a tool like `telnet` or `nc` (netcat):
 
 ```bash
-telnet localhost 4080
+telnet [host] [port]
 # or
-nc localhost 4080
+nc [host] [port]
 ```
 
-Type a message and press Enter. The server will log your message and send a confirmation back.
+Replace `[host]` and `[port]` with the values specified in your `.env` file. Type a message and press Enter. The server will log your message and send a confirmation back.
 
+## Development Commands
+
+- **Start the server**: `make up`
+- **Format and tidy the code**: `make tidy`
+- **Lint the code**: `make lint`
+- **Run tests**: `make test`
